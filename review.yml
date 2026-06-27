@@ -1,0 +1,83 @@
+aid: boost-insurance
+name: Boost Insurance
+review:
+  question: Does Boost Insurance expose a documented, real REST API for the embedded-insurance lifecycle?
+  answer: true
+  date: '2026-06-25'
+  reviewer: API Evangelist
+  availabilityNote: |
+    Boost Insurance publishes real, partner-facing API documentation for its
+    Policy Admin System (PAS) at https://learn.boostinsurance.com/docs (with a
+    machine-readable index at /llms.txt) and a reference at
+    https://docs.boostinsurance.io. The API is a JSON REST API secured with the
+    OAuth 2.0 Client Credentials grant. Full self-serve access is gated behind a
+    sales-led partner relationship; a sandbox environment is available to
+    onboarded partners. There is no public, self-serve signup or public pricing.
+findings:
+  summary: |
+    Boost Insurance operates a genuine insurance-as-a-service / embedded-insurance
+    platform with a documented REST API covering the full lifecycle: programs/
+    products, quotes (rate/quote), policies (bind/issue and cancellation),
+    midterm endorsements, and claims (FNOL with adjudication). Boost notifies
+    partners of policy delivery and claim updates via outbound webhooks.
+    Authentication is OAuth 2.0 Client Credentials, exchanging a Client ID and
+    Client Secret for a bearer token. The platform base URL referenced in Boost
+    developer materials is https://api.insurtech.dev. Pricing is sales-led and
+    partner-gated with no public rate card, so plans, rate-limits, and finops
+    artifacts are recorded as reconciled:false. No public GitHub organization
+    was found for Boost Insurance, so GitHubOrganization is omitted from the
+    APIs.json common collection.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.insurtech.dev
+      documented: true
+    - protocol: Webhooks
+      scheme: https
+      note: Outbound webhook notifications for policy delivery and claim updates.
+      documented: true
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket or streaming surface is documented by Boost Insurance.
+  endpointsConfirmedRest:
+    - POST https://api.insurtech.dev/auth/oauth2/token
+    - POST https://api.insurtech.dev/quotes
+    - POST https://api.insurtech.dev/policies
+  endpointsDocumentedNotFullyPathConfirmed:
+    - Claims / FNOL submission and retrieval
+    - Midterm endorsements, cancellations, and voids
+    - Webhook subscription / event delivery
+  authentication:
+    type: OAuth 2.0 Client Credentials
+    tokenEndpoint: https://api.insurtech.dev/auth/oauth2/token
+    credentials: Client ID + Client Secret issued by Boost
+sources:
+  - url: https://learn.boostinsurance.com/docs
+    type: Documentation
+    note: Boost API Guide; overview of quotes, policies, claims, endorsements, billing.
+  - url: https://learn.boostinsurance.com/docs/authentication
+    type: Documentation
+    note: Documents OAuth 2.0 Client Credentials grant with Client ID and Client Secret.
+  - url: https://learn.boostinsurance.com/docs/policy-flow
+    type: Documentation
+    note: Describes POST /quotes and POST /policies (Quote ID to bind/issue).
+  - url: https://learn.boostinsurance.com/docs/claims-flow
+    type: Documentation
+    note: Describes FNOL claim flow and webhook notifications on claim updates.
+  - url: https://docs.boostinsurance.io/
+    type: APIReference
+    note: Public API reference referenced from the developer docs.
+  - url: https://boostinsurance.com/platform/
+    type: Website
+    note: Describes the insurance-as-a-service platform and white-labeled programs.
+actions:
+  apisYmlUpdated: true
+  reason: |
+    Documented the real Boost PAS REST API across six API entries (Programs,
+    Quotes, Policies, Claims, Endorsements, Webhooks). OpenAPI models only the
+    confirmed endpoints (token, /quotes, /policies, /claims) with accurate
+    descriptions and an OAuth 2.0 Client Credentials security scheme; no
+    request/response schemas were fabricated. Pricing, rate-limit, and finops
+    artifacts are reconciled:false because Boost is sales-led with no public
+    rate card.

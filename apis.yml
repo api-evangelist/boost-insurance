@@ -1,0 +1,139 @@
+aid: boost-insurance
+url: https://raw.githubusercontent.com/api-evangelist/boost-insurance/refs/heads/main/apis.yml
+name: Boost Insurance
+kind: company
+description: Boost Insurance is an insurance-as-a-service / embedded-insurance infrastructure
+  platform that packages compliance, capital, and technology into a turnkey, white-labeled
+  program accessible through a modern RESTful API. The Boost Policy Admin System (PAS)
+  lets partners quote, bind, issue, endorse, cancel, and manage claims for admitted
+  and surplus-lines products using JSON over OAuth 2.0.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Insurance
+- Embedded Insurance
+- Insurance-as-a-Service
+- Policy Administration
+- Claims
+created: '2026-06-25'
+modified: '2026-06-25'
+specificationVersion: '0.19'
+apis:
+- aid: boost-insurance:boost-insurance-programs-api
+  name: Boost Insurance Programs API
+  tags:
+  - Programs
+  - Products
+  - Insurance
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://learn.boostinsurance.com/docs
+  baseURL: https://api.insurtech.dev
+  properties:
+  - url: https://learn.boostinsurance.com/docs
+    type: Documentation
+  - url: openapi/boost-insurance-openapi.yml
+    type: OpenAPI
+  description: Insurance programs and products configured on the Boost Policy Admin
+    System (Pet, Small Business Cyber, Renters, and partner programs) that define the
+    forms, coverages, and rating used to generate quotes and policies.
+- aid: boost-insurance:boost-insurance-quotes-api
+  name: Boost Insurance Quotes API
+  tags:
+  - Quotes
+  - Rating
+  - Underwriting
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://learn.boostinsurance.com/docs/policy-flow
+  baseURL: https://api.insurtech.dev
+  properties:
+  - url: https://learn.boostinsurance.com/docs/policy-flow
+    type: Documentation
+  - url: openapi/boost-insurance-openapi.yml
+    type: OpenAPI
+  description: Rate and quote insurance coverage by POSTing applicant and coverage
+    data to the /quotes endpoint, then manage quote state, modifications, documents,
+    and referral handling prior to binding.
+- aid: boost-insurance:boost-insurance-policies-api
+  name: Boost Insurance Policies API
+  tags:
+  - Policies
+  - Binding
+  - Issuance
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://learn.boostinsurance.com/docs/policy-flow
+  baseURL: https://api.insurtech.dev
+  properties:
+  - url: https://learn.boostinsurance.com/docs/policy-flow
+    type: Documentation
+  - url: openapi/boost-insurance-openapi.yml
+    type: OpenAPI
+  description: Bind and issue a policy by POSTing a Quote ID to the /policies endpoint;
+    Boost generates and delivers the policy with all coverages, dates, and entity
+    information, and manages the lifecycle through cancellation.
+- aid: boost-insurance:boost-insurance-claims-api
+  name: Boost Insurance Claims API
+  tags:
+  - Claims
+  - FNOL
+  - Adjudication
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://learn.boostinsurance.com/docs/claims-flow
+  baseURL: https://api.insurtech.dev
+  properties:
+  - url: https://learn.boostinsurance.com/docs/claims-flow
+    type: Documentation
+  - url: https://learn.boostinsurance.com/docs/intro-to-claims
+    type: Documentation
+  - url: openapi/boost-insurance-openapi.yml
+    type: OpenAPI
+  description: First Notice of Loss (FNOL) and claims API that lets customers file
+    claims tied to a policy; Boost handles adjudication in-house or via TPA partners
+    and acts as the single source of truth for claim status.
+- aid: boost-insurance:boost-insurance-endorsements-api
+  name: Boost Insurance Endorsements API
+  tags:
+  - Endorsements
+  - Midterm Changes
+  - Cancellations
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://learn.boostinsurance.com/docs
+  baseURL: https://api.insurtech.dev
+  properties:
+  - url: https://learn.boostinsurance.com/docs
+    type: Documentation
+  - url: openapi/boost-insurance-openapi.yml
+    type: OpenAPI
+  description: Midterm endorsements and policy modifications, including coverage changes,
+    cancellations, and voids applied to an in-force policy.
+- aid: boost-insurance:boost-insurance-webhooks-api
+  name: Boost Insurance Webhooks API
+  tags:
+  - Webhooks
+  - Events
+  - Notifications
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://learn.boostinsurance.com/docs/claims-flow
+  baseURL: https://api.insurtech.dev
+  properties:
+  - url: https://learn.boostinsurance.com/docs/claims-flow
+    type: Documentation
+  - url: openapi/boost-insurance-openapi.yml
+    type: OpenAPI
+  description: Outbound webhook notifications that alert partners when policies are
+    delivered or when a claim is updated, so they can pull the latest information and
+    stay in sync with Boost adjudications.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/boostinsurance
+- type: Website
+  url: https://www.boostinsurance.com
+- type: Documentation
+  url: https://learn.boostinsurance.com/docs
+- type: Plans
+  url: plans/boost-insurance-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/boost-insurance-rate-limits.yml
+- type: FinOps
+  url: finops/boost-insurance-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

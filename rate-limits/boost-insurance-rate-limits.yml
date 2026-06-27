@@ -1,0 +1,51 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Boost Insurance
+providerId: boost-insurance
+created: '2026-06-25'
+modified: '2026-06-25'
+reconciled: false
+tags:
+- Insurance
+- Embedded Insurance
+- Insurance-as-a-Service
+- Policy Administration
+- Claims
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  Boost Insurance does not publish public API rate limits. The Boost Policy
+  Admin System (PAS) API is a partner-gated, OAuth 2.0 Client Credentials REST
+  API; any throttling, quota, or concurrency constraints are defined in the
+  partner program agreement and operational documentation rather than on a
+  public page. Specific per-endpoint limits are not reconciled in this artifact.
+notes: >-
+  Verify rate-limit, retry, and idempotency behavior in Boost's partner
+  documentation (learn.boostinsurance.com / docs.boostinsurance.io) during
+  reconciliation. No public throttling values are available.
+sources:
+- https://learn.boostinsurance.com/docs
+- https://learn.boostinsurance.com/docs/authentication
+- https://docs.boostinsurance.io/
+responseCodes:
+  throttled: 429
+limits:
+- name: API Request Limits
+  scope: partner
+  metric: requests
+  limit: see partner documentation
+  notes: Not publicly documented; governed by the partner program agreement.
+policies:
+- name: Authentication
+  description: >-
+    All requests require a valid OAuth 2.0 bearer token obtained via the Client
+    Credentials grant; expired tokens must be refreshed before retrying.
+- name: Backoff Strategy
+  description: >-
+    Clients should implement exponential backoff with jitter and honor any
+    Retry-After header on throttled (429) responses.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

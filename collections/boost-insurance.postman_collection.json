@@ -1,0 +1,200 @@
+{
+  "info": {
+    "name": "Boost Insurance API",
+    "description": {
+      "content": "Partial Postman collection for the Boost Insurance Policy Admin System (PAS) API. Only publicly documented, confirmed endpoints are included. Authentication uses the OAuth 2.0 Client Credentials grant against https://api.insurtech.dev/auth/oauth2/token.",
+      "type": "text/plain"
+    },
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.insurtech.dev"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.insurtech.dev/auth/oauth2/token"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "description": {
+        "content": "Obtain an OAuth 2.0 access token.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "name": "Request an OAuth 2.0 access token.",
+          "request": {
+            "name": "Request an OAuth 2.0 access token.",
+            "description": {
+              "content": "Exchange a Client ID and Client Secret for a bearer access token using the OAuth 2.0 Client Credentials grant.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/oauth2/token",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "oauth2",
+                "token"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Quotes",
+      "description": {
+        "content": "Rate and quote insurance coverage.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "name": "Create a quote.",
+          "request": {
+            "name": "Create a quote.",
+            "description": {
+              "content": "Rate and quote insurance coverage by submitting applicant, coverage, and program data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/quotes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "quotes"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Policies",
+      "description": {
+        "content": "Bind and issue policies.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "name": "Bind and issue a policy from a quote.",
+          "request": {
+            "name": "Bind and issue a policy from a quote.",
+            "description": {
+              "content": "Transition a Quote into a Policy by submitting the Quote ID; Boost generates and delivers the Policy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/policies",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "policies"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Claims",
+      "description": {
+        "content": "File and track claims (FNOL).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "name": "File a First Notice of Loss (FNOL).",
+          "request": {
+            "name": "File a First Notice of Loss (FNOL).",
+            "description": {
+              "content": "Submit FNOL data tied to a Policy; Boost begins adjudication and acts as the single source of truth for claim status.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/claims",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "claims"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

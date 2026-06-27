@@ -1,0 +1,112 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Boost Insurance API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "oauth2": {
+        "grantType": "client_credentials",
+        "accessTokenUrl": "https://api.insurtech.dev/auth/oauth2/token",
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request an OAuth 2.0 access token.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.insurtech.dev/auth/oauth2/token",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Exchange a Client ID and Client Secret for a bearer access token using the OAuth 2.0 Client Credentials grant."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Quotes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a quote.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.insurtech.dev/quotes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Rate and quote insurance coverage by submitting applicant, coverage, and program data."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Policies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Bind and issue a policy from a quote.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.insurtech.dev/policies",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Transition a Quote into a Policy by submitting the Quote ID; Boost generates and delivers the Policy."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Claims",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "File a First Notice of Loss (FNOL).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.insurtech.dev/claims",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit FNOL data tied to a Policy; Boost begins adjudication and acts as the single source of truth for claim status."
+        }
+      ]
+    }
+  ]
+}

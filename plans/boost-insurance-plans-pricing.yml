@@ -1,0 +1,61 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Boost Insurance
+providerId: boost-insurance
+created: '2026-06-25'
+modified: '2026-06-25'
+reconciled: false
+tags:
+- Insurance
+- Embedded Insurance
+- Insurance-as-a-Service
+- Policy Administration
+- Claims
+- Plans
+description: >-
+  Boost Insurance does not publish public, self-serve API pricing. Access to
+  the Boost Policy Admin System (PAS) API is sales-led and partner-gated:
+  prospective partners engage Boost to stand up a white-labeled insurance
+  program, and commercial terms are negotiated per program. Economics are
+  typically driven by insurance premium, program fees, and risk-sharing
+  arrangements rather than per-call API metering. The values below are not
+  reconciled against a published rate card because none is publicly available.
+notes: >-
+  No public pricing page exists. Contact Boost sales / partnerships to obtain a
+  program agreement and commercial terms. Update this artifact if Boost
+  publishes a public rate card.
+sources:
+- https://boostinsurance.com/platform/
+- https://boostinsurance.com/developer/
+- https://learn.boostinsurance.com/docs
+plans:
+- id: boost-insurance-partner
+  name: Partner Program
+  type: enterprise
+  description: >-
+    Sales-led, partner-gated access to the Boost PAS API to build and operate a
+    white-labeled embedded-insurance program. Commercial terms (program fees,
+    premium economics, risk sharing) are negotiated per program.
+  entries:
+  - label: Partner Agreement
+    name: partner_agreement
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Programs / Products
+  - name: Quotes
+  - name: Policies
+  - name: Endorsements
+  - name: Claims (FNOL)
+  - name: Webhooks
+  - name: Sandbox Environment
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
