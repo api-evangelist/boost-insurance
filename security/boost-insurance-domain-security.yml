@@ -1,0 +1,30 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.boostinsurance.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 28 14:31:31 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: learn.boostinsurance.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 17 05:38:08 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: api.insurtech.dev
+  https: false
+domains:
+- domain: boostinsurance.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
+- domain: insurtech.dev
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false

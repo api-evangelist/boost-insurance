@@ -122,6 +122,10 @@ apis:
     delivered or when a claim is updated, so they can pull the latest information and
     stay in sync with Boost adjudications.
 common:
+- type: DomainSecurity
+  url: security/boost-insurance-domain-security.yml
+- type: Authentication
+  url: authentication/boost-insurance-authentication.yml
 - type: OAuthScopes
   url: scopes/boost-insurance-scopes.yml
 - type: LinkedIn
