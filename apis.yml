@@ -122,6 +122,8 @@ apis:
     delivered or when a claim is updated, so they can pull the latest information and
     stay in sync with Boost adjudications.
 common:
+- type: OAuthScopes
+  url: scopes/boost-insurance-scopes.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/boostinsurance
 - type: Website
