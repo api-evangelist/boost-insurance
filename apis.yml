@@ -122,6 +122,8 @@ apis:
     delivered or when a claim is updated, so they can pull the latest information and
     stay in sync with Boost adjudications.
 common:
+- type: AgenticAccess
+  url: agentic-access/boost-insurance-agentic-access.yml
 - type: DomainSecurity
   url: security/boost-insurance-domain-security.yml
 - type: Authentication
