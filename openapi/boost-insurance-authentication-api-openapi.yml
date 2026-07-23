@@ -1,0 +1,37 @@
+openapi: 3.0.1
+info:
+  title: Boost Insurance Authentication API
+  description: 'Partial, factual OpenAPI description of the Boost Insurance Policy Admin System (PAS) API. Boost exposes a JSON REST API for the embedded / insurance-as-a-service lifecycle: quote, bind/issue, endorse, cancel, and claims (FNOL), with outbound webhook notifications. Authentication uses the OAuth 2.0 Client Credentials grant; partners exchange a Client ID and Client Secret for a bearer token at the authentication endpoint and send it on each request. Only endpoints that are publicly documented at the time of writing are modeled here. The full request/response schemas, endorsement paths, and webhook payloads are published in Boost''s partner documentation (https://learn.boostinsurance.com/docs and https://docs.boostinsurance.io) and are not reproduced here to avoid fabrication.'
+  termsOfService: https://boostinsurance.com/
+  contact:
+    name: Boost Insurance Support
+    email: help@boostinsurance.io
+    url: https://learn.boostinsurance.com/docs
+  version: '1.0'
+servers:
+- url: https://api.insurtech.dev
+  description: Boost Platform API base URL referenced in Boost developer documentation.
+security:
+- boostOAuth: []
+tags:
+- name: Authentication
+paths:
+  /auth/oauth2/token:
+    post:
+      operationId: createToken
+      tags:
+      - Authentication
+      summary: Request an OAuth 2.0 access token.
+      description: Exchange a Client ID and Client Secret for a bearer access token using the OAuth 2.0 Client Credentials grant. The returned token must be sent as a Bearer token on subsequent API requests.
+      responses:
+        '200':
+          description: An OAuth 2.0 access token was issued.
+components:
+  securitySchemes:
+    boostOAuth:
+      type: oauth2
+      description: OAuth 2.0 Client Credentials grant. Tokens are obtained from the Boost authentication endpoint and presented as a Bearer token.
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.insurtech.dev/auth/oauth2/token
+          scopes: {}
