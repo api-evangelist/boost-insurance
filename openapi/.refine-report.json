@@ -1,0 +1,20 @@
+{
+  "provider": "boost-insurance",
+  "sources": [
+    "boost-insurance-authentication-api-openapi.yml",
+    "boost-insurance-claims-api-openapi.yml",
+    "boost-insurance-policies-api-openapi.yml",
+    "boost-insurance-quotes-api-openapi.yml"
+  ],
+  "outputs": [
+    "boost-insurance-authentication-api-openapi.yml",
+    "boost-insurance-claims-api-openapi.yml",
+    "boost-insurance-policies-api-openapi.yml",
+    "boost-insurance-quotes-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
