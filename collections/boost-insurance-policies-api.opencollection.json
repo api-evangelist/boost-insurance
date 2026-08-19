@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Boost Insurance Authentication Policies API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.insurtech.dev/auth/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Policies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Bind and issue a policy from a quote.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.insurtech.dev/policies"
+          },
+          "docs": "Transition a Quote into a Policy by submitting the Quote ID. Boost generates and delivers the Policy with all Quote data including coverages, dates, and entity information, assuming the Quote meets convertibility requirements."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

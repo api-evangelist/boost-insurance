@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Boost Insurance Authentication Claims API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.insurtech.dev/auth/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Claims",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "File a First Notice of Loss (FNOL).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.insurtech.dev/claims"
+          },
+          "docs": "Submit FNOL data tied to a Policy. Boost stores the claim against the relevant Policy and begins adjudication in-house or via a TPA partner, acting as the single source of truth for claim status. Claim updates are delivered back to the partner via webhook."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

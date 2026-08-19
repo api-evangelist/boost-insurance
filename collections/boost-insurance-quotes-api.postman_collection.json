@@ -1,0 +1,113 @@
+{
+  "item": [
+    {
+      "id": "49dfbd7e-3c53-4a7f-a55b-6efe735bfe97",
+      "name": "Quotes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c0334ea4-978b-4df2-b532-26875f8bd47f",
+          "name": "Create a quote.",
+          "request": {
+            "name": "Create a quote.",
+            "description": {
+              "content": "Rate and quote insurance coverage by submitting applicant, coverage, and program data. Returns a Quote that can later be modified, documented, and converted into a Policy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "quotes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "41fd3842-d64c-41af-9524-d1a15857cb40",
+              "name": "A quote was created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.insurtech.dev",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.insurtech.dev/auth/oauth2/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9e2d912a-6169-47a3-987b-bf09857a1dc7",
+    "name": "Boost Insurance Authentication Quotes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Partial, factual OpenAPI description of the Boost Insurance Policy Admin System (PAS) API. Boost exposes a JSON REST API for the embedded / insurance-as-a-service lifecycle: quote, bind/issue, endorse, cancel, and claims (FNOL), with outbound webhook notifications. Authentication uses the OAuth 2.0 Client Credentials grant; partners exchange a Client ID and Client Secret for a bearer token at the authentication endpoint and send it on each request. Only endpoints that are publicly documented at the time of writing are modeled here. The full request/response schemas, endorsement paths, and webhook payloads are published in Boost's partner documentation (https://learn.boostinsurance.com/docs and https://docs.boostinsurance.io) and are not reproduced here to avoid fabrication.\n\nContact Support:\n Name: Boost Insurance Support\n Email: help@boostinsurance.io",
+      "type": "text/plain"
+    }
+  }
+}

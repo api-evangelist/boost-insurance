@@ -1,0 +1,113 @@
+{
+  "item": [
+    {
+      "id": "f3199de3-bd7d-419d-a0df-49b119ed08f6",
+      "name": "Claims",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c14289a8-5224-40f2-9302-be978d70ba3a",
+          "name": "File a First Notice of Loss (FNOL).",
+          "request": {
+            "name": "File a First Notice of Loss (FNOL).",
+            "description": {
+              "content": "Submit FNOL data tied to a Policy. Boost stores the claim against the relevant Policy and begins adjudication in-house or via a TPA partner, acting as the single source of truth for claim status. Claim updates are delivered back to the partner via webhook.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "claims"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0eecb106-fb61-4d77-be62-2cb533123282",
+              "name": "A claim (FNOL) was created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "claims"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.insurtech.dev",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.insurtech.dev/auth/oauth2/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7e6ada0c-48bb-480f-a53f-ccb2d380e665",
+    "name": "Boost Insurance Authentication Claims API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Partial, factual OpenAPI description of the Boost Insurance Policy Admin System (PAS) API. Boost exposes a JSON REST API for the embedded / insurance-as-a-service lifecycle: quote, bind/issue, endorse, cancel, and claims (FNOL), with outbound webhook notifications. Authentication uses the OAuth 2.0 Client Credentials grant; partners exchange a Client ID and Client Secret for a bearer token at the authentication endpoint and send it on each request. Only endpoints that are publicly documented at the time of writing are modeled here. The full request/response schemas, endorsement paths, and webhook payloads are published in Boost's partner documentation (https://learn.boostinsurance.com/docs and https://docs.boostinsurance.io) and are not reproduced here to avoid fabrication.\n\nContact Support:\n Name: Boost Insurance Support\n Email: help@boostinsurance.io",
+      "type": "text/plain"
+    }
+  }
+}
