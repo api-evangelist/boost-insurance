@@ -7,6 +7,18 @@ description: Boost Insurance is an insurance-as-a-service / embedded-insurance i
   program accessible through a modern RESTful API. The Boost Policy Admin System (PAS)
   lets partners quote, bind, issue, endorse, cancel, and manage claims for admitted
   and surplus-lines products using JSON over OAuth 2.0.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
