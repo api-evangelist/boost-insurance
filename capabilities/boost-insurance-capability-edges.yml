@@ -1,0 +1,44 @@
+slug: boost-insurance
+provider: Boost Insurance
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Insurance
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Claims
+  spec_file: boost-insurance-claims-api-openapi.yml
+  capability_id: BC-2160.10
+  capability_id_l1: BC-2160
+  capability_name: First Notice of Loss Management
+  confidence: 0.95
+  evidence: '"POST /claims  createClaim  File a First Notice of Loss (FNOL)."'
+  reason: The operation explicitly files a First Notice of Loss on an insurance policy admin system, which
+    is precisely FNOL intake and registration.
+- tag: Policies
+  spec_file: boost-insurance-policies-api-openapi.yml
+  capability_id: BC-2140.10
+  capability_id_l1: BC-2140
+  capability_name: Policy Issuance Management
+  confidence: 0.85
+  evidence: '"POST /policies  createPolicy  Bind and issue a policy from a quote."'
+  reason: Creation/issuance of the policy contract from an accepted quote in a Policy Admin System maps
+    to Policy Issuance Management; the binding aspect touches underwriting decisioning, hence not maximal
+    confidence.
+- tag: Quotes
+  spec_file: boost-insurance-quotes-api-openapi.yml
+  capability_id: BC-2110.60
+  capability_id_l1: BC-2110
+  capability_name: Quote & Submission Management
+  confidence: 0.75
+  evidence: '"POST /quotes  createQuote  Create a quote." within "the embedded / insurance-as-a-service
+    lifecycle: quote, bind/issue, endorse, cancel"'
+  reason: Quote generation for an insurance product through partner/embedded channels fits Quote & Submission
+    Management; it could alternatively be read as underwriting pricing, so confidence is moderate.

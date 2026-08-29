@@ -122,6 +122,9 @@ apis:
   - type: Documentation
     url: https://learn.boostinsurance.com/docs/intro-to-claims
 common:
+- type: CapabilityMap
+  url: capabilities/boost-insurance-capability-edges.yml
+  name: Boost Insurance Business Capability Map
 - type: AgenticAccess
   url: agentic-access/boost-insurance-agentic-access.yml
 - type: DomainSecurity
