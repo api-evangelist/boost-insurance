@@ -1,10 +1,7 @@
 {
   "provider": "boost-insurance",
   "sources": [
-    "boost-insurance-authentication-api-openapi.yml",
-    "boost-insurance-claims-api-openapi.yml",
-    "boost-insurance-policies-api-openapi.yml",
-    "boost-insurance-quotes-api-openapi.yml"
+    "_original/boost-insurance-openapi.yml"
   ],
   "outputs": [
     "boost-insurance-authentication-api-openapi.yml",
@@ -15,6 +12,19 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "boost-insurance-openapi.yml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "boost-insurance-openapi.yml: declared missing tag: Authentication",
+    "boost-insurance-openapi.yml: declared missing tag: Claims",
+    "boost-insurance-openapi.yml: declared missing tag: Policies",
+    "boost-insurance-openapi.yml: declared missing tag: Quotes",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "boost-insurance-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "boost-insurance-claims-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "boost-insurance-policies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "boost-insurance-quotes-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
