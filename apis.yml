@@ -49,7 +49,7 @@ tags_raw:
 - Policy Administration
 - Claims
 created: '2026-06-25'
-modified: '2026-06-25'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: boost-insurance:boost-insurance-authentication-api
@@ -125,6 +125,8 @@ apis:
   - type: Documentation
     url: https://learn.boostinsurance.com/docs/intro-to-claims
 common:
+- url: https://boostinsurance.com/blog/
+  type: Blog
 - type: CapabilityMap
   url: capabilities/boost-insurance-capability-edges.yml
   name: Boost Insurance Business Capability Map
