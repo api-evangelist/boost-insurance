@@ -1,16 +1,36 @@
-generated: '2026-07-11'
-method: derived
-source: openapi/boost-insurance-openapi.yml
-docs: https://learn.boostinsurance.com/docs/authentication
-note: Boost uses the OAuth 2.0 Client Credentials grant with a Client ID and Client
-  Secret, and does not publish any OAuth scopes; access is governed by partner credentials
-  rather than scoped tokens (https://learn.boostinsurance.com/docs/authentication).
+generated: '2026-10-14'
+method: none
+source: openapi/boost-insurance-authentication-api-openapi.yml, openapi/boost-insurance-claims-api-openapi.yml,
+  openapi/boost-insurance-policies-api-openapi.yml, openapi/boost-insurance-quotes-api-openapi.yml
 schemes:
 - name: boostOAuth
-  source: openapi/boost-insurance-openapi.yml
+  source: openapi/boost-insurance-authentication-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.insurtech.dev/auth/oauth2/token
+  description: OAuth 2.0 Client Credentials grant. Tokens are obtained from the Boost authentication
+    endpoint and presented as a Bearer token.
+- name: boostOAuth
+  source: openapi/boost-insurance-claims-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.insurtech.dev/auth/oauth2/token
+  description: OAuth 2.0 Client Credentials grant. Tokens are obtained from the Boost authentication
+    endpoint and presented as a Bearer token.
+- name: boostOAuth
+  source: openapi/boost-insurance-policies-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.insurtech.dev/auth/oauth2/token
+  description: OAuth 2.0 Client Credentials grant. Tokens are obtained from the Boost authentication
+    endpoint and presented as a Bearer token.
+- name: boostOAuth
+  source: openapi/boost-insurance-quotes-api-openapi.yml
   flows:
   - flow: clientCredentials
     tokenUrl: https://api.insurtech.dev/auth/oauth2/token
   description: OAuth 2.0 Client Credentials grant. Tokens are obtained from the Boost authentication
     endpoint and presented as a Bearer token.
 scopes: []
+note: The OAuth2 security scheme(s) in the OpenAPI declare no scopes, and no security requirement
+  references one.
