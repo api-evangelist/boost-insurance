@@ -1,4 +1,4 @@
-# Boost Insurance (boost-insurance)
+# Boost Insurance
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,154 +66,127 @@
 
 Boost Insurance is an insurance-as-a-service / embedded-insurance infrastructure platform that packages compliance, capital, and technology into a turnkey, white-labeled program accessible through a modern RESTful API. The Boost Policy Admin System (PAS) lets partners quote, bind, issue, endorse, cancel, and manage claims for admitted and surplus-lines products using JSON over OAuth 2.0.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/boost-insurance/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/boost-insurance/refs/heads/main/apis.yml)
+**Areas:** Insurance · Embedded Insurance · Insurance As A Service · Policy Administration · Claims
 
-## Tags
+## Boost Insurance on APIs.io
 
-- Insurance
-- Embedded Insurance
-- Insurance-as-a-Service
-- Policy Administration
-- Claims
+Everything profiled for Boost Insurance is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/boost-insurance/](https://apis.io/providers/boost-insurance/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (4)
 
-- **Created:** 2026-06-25
-- **Modified:** 2026-06-25
+- [Boost Insurance Authentication API](https://apis.io/apis/boost-insurance/boost-insurance-authentication-api/) — The Authentication API from Boost Insurance — 1 operation(s) for authentication.
+- [Boost Insurance Claims API](https://apis.io/apis/boost-insurance/boost-insurance-claims-api/) — The Claims API from Boost Insurance — 1 operation(s) for claims.
+- [Boost Insurance Policies API](https://apis.io/apis/boost-insurance/boost-insurance-policies-api/) — The Policies API from Boost Insurance — 1 operation(s) for policies.
+- [Boost Insurance Quotes API](https://apis.io/apis/boost-insurance/boost-insurance-quotes-api/) — The Quotes API from Boost Insurance — 1 operation(s) for quotes.
 
-## APIs
+### Published properties
 
-### Boost Insurance Programs API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Insurance programs and products configured on the Boost Policy Admin System (Pet, Small Business Cyber, Renters, and partner programs) that define the forms, coverages, and rating used to generate quotes and policies.
+#### Agentic access (1)
 
-- **Human URL:** [https://learn.boostinsurance.com/docs](https://learn.boostinsurance.com/docs)
-- **Base URL:** `https://api.insurtech.dev`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Boost Insurance Agentic Access](https://apis.io/agentic-access/boost-insurance/boost-insurance-agentic-access/)
 
-- Programs
-- Products
-- Insurance
+#### Collections (5)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://learn.boostinsurance.com/docs)
-- [OpenAPI](openapi/boost-insurance-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/boost-insurance.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/boost-insurance.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Boost Insurance API](https://apis.io/collections/boost-insurance/open-boost-insurance/)
+- [Boost Insurance Authentication API](https://apis.io/collections/boost-insurance/open-boost-insurance-authentication-api/)
+- [Boost Insurance Authentication Claims API](https://apis.io/collections/boost-insurance/open-boost-insurance-claims-api/)
+- [Boost Insurance Authentication Policies API](https://apis.io/collections/boost-insurance/open-boost-insurance-policies-api/)
+- [Boost Insurance Authentication Quotes API](https://apis.io/collections/boost-insurance/open-boost-insurance-quotes-api/)
 
-### Boost Insurance Quotes API
+#### Security (2)
 
-Rate and quote insurance coverage by POSTing applicant and coverage data to the /quotes endpoint, then manage quote state, modifications, documents, and referral handling prior to binding.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://learn.boostinsurance.com/docs/policy-flow](https://learn.boostinsurance.com/docs/policy-flow)
-- **Base URL:** `https://api.insurtech.dev`
+- [Boost Insurance Authentication](https://apis.io/security/boost-insurance/boost-insurance-authentication/)
+- [Boost Insurance Domain Security](https://apis.io/security/boost-insurance/boost-insurance-domain-security/)
 
-#### Tags
+#### OAuth scopes (1)
 
-- Quotes
-- Rating
-- Underwriting
+The permissions the API asks for.
 
-#### Properties
+- [Boost Insurance Scopes](https://apis.io/scopes/boost-insurance/boost-insurance-scopes/)
 
-- [Documentation](https://learn.boostinsurance.com/docs/policy-flow)
-- [OpenAPI](openapi/boost-insurance-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/boost-insurance.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/boost-insurance.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Plans and pricing (1)
 
-### Boost Insurance Policies API
+Published plans, tiers and prices.
 
-Bind and issue a policy by POSTing a Quote ID to the /policies endpoint; Boost generates and delivers the policy with all coverages, dates, and entity information, and manages the lifecycle through cancellation.
+- [Boost Insurance Plans Pricing](https://apis.io/plans/boost-insurance/boost-insurance-plans-pricing/)
 
-- **Human URL:** [https://learn.boostinsurance.com/docs/policy-flow](https://learn.boostinsurance.com/docs/policy-flow)
-- **Base URL:** `https://api.insurtech.dev`
+#### Rate limits (1)
 
-#### Tags
+Published request limits.
 
-- Policies
-- Binding
-- Issuance
+- [Boost Insurance Rate Limits](https://apis.io/rate-limits/boost-insurance/boost-insurance-rate-limits/)
 
-#### Properties
+#### FinOps (1)
 
-- [Documentation](https://learn.boostinsurance.com/docs/policy-flow)
-- [OpenAPI](openapi/boost-insurance-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/boost-insurance.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/boost-insurance.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+What the API costs to run, by operation.
 
-### Boost Insurance Claims API
+- [Boost Insurance Finops](https://apis.io/finops/boost-insurance/boost-insurance-finops/)
 
-First Notice of Loss (FNOL) and claims API that lets customers file claims tied to a policy; Boost handles adjudication in-house or via TPA partners and acts as the single source of truth for claim status.
+## Where to find this API
 
-- **Human URL:** [https://learn.boostinsurance.com/docs/claims-flow](https://learn.boostinsurance.com/docs/claims-flow)
-- **Base URL:** `https://api.insurtech.dev`
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Tags
-
-- Claims
-- FNOL
-- Adjudication
-
-#### Properties
-
-- [Documentation](https://learn.boostinsurance.com/docs/claims-flow)
-- [Documentation](https://learn.boostinsurance.com/docs/intro-to-claims)
-- [OpenAPI](openapi/boost-insurance-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/boost-insurance.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/boost-insurance.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Boost Insurance Endorsements API
-
-Midterm endorsements and policy modifications, including coverage changes, cancellations, and voids applied to an in-force policy.
-
-- **Human URL:** [https://learn.boostinsurance.com/docs](https://learn.boostinsurance.com/docs)
-- **Base URL:** `https://api.insurtech.dev`
-
-#### Tags
-
-- Endorsements
-- Midterm Changes
-- Cancellations
-
-#### Properties
-
-- [Documentation](https://learn.boostinsurance.com/docs)
-- [OpenAPI](openapi/boost-insurance-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/boost-insurance.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/boost-insurance.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Boost Insurance Webhooks API
-
-Outbound webhook notifications that alert partners when policies are delivered or when a claim is updated, so they can pull the latest information and stay in sync with Boost adjudications.
-
-- **Human URL:** [https://learn.boostinsurance.com/docs/claims-flow](https://learn.boostinsurance.com/docs/claims-flow)
-- **Base URL:** `https://api.insurtech.dev`
-
-#### Tags
-
-- Webhooks
-- Events
-- Notifications
-
-#### Properties
-
-- [Documentation](https://learn.boostinsurance.com/docs/claims-flow)
-- [OpenAPI](openapi/boost-insurance-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/boost-insurance.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/boost-insurance.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/boostinsurance)
 - [Website](https://www.boostinsurance.com)
 - [Documentation](https://learn.boostinsurance.com/docs)
-- [Plans](plans/boost-insurance-plans-pricing.yml)
-- [Rate Limits](rate-limits/boost-insurance-rate-limits.yml)
-- [Fin Ops](finops/boost-insurance-finops.yml)
+- [Blog](https://boostinsurance.com/blog/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 23.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 42.2 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 5.3 |
+
+**Agent readiness 20.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 25.4** — Insurance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/boost-insurance/](https://apis.io/providers/boost-insurance/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Boost Insurance: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/boost-insurance/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
